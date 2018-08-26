@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1535250491 source:c:\users\familia\desktop\acumuladores_contadores\main.c
+	<stdio.h>
+	<stdlib.h>
+
