@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1536245607 source:c:\users\alumno\desktop\vctores_2\main.c
+	<stdio.h>
+	<stdlib.h>
+
