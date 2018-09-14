@@ -31,9 +31,13 @@ INFORMES
 */
 
 float calcularPromedio(int, int, int);
-int cargarAlumnos(char [][50], int [], int[], int[], float[], char[] ,  int);
-int mostrarAlumnos(char [][50], int [], int[], int[], float[], char[] ,  int);
+int cargarAlumnos(char [][50], int [], int[], int[], float[],  int);
+int mostrarAlumnos(char [][50], int [], int[], int[], float[],  int);
 
+///INFORMES
+
+float promedios_Seis(float [], int);
+int maxi_min(float prom[], int tamanio);
 
 int main()
 {
@@ -49,8 +53,8 @@ int main()
       system("cls");
       printf("\nBienvenido\n\n");
       printf("\n1. Carga de alumnos");
-      printf("\n2. Modificar alumnos");
-      printf("\n3. Informes");
+      printf("\n2. Mostrar alumnos");
+      printf("\n3. mayor promedio");
       printf("\n4. Salir");
       printf("\nIngrese una opcion del menu: ");
       scanf("%d", &opcion);
@@ -59,14 +63,20 @@ int main()
       {
 
         case 1:
-               cargarAlumnos(nombre, nota1, nota2, nota3, promedio, sexo, TAM);
+               cargarAlumnos(nombre, nota1, nota2, nota3, promedio, TAM);
+               system("pause");
                break;
 
         case 2:
-               mostrarAlumnos(nombre, nota1, nota2, nota3, promedio, sexo, TAM);
+               mostrarAlumnos(nombre, nota1, nota2, nota3, promedio, TAM);
+               system("pause");
                break;
 
         case 3:
+               maxi_min(promedio, TAM);
+               break;
+
+        case 4:
                repuesta = 'n';
                break;
 
@@ -76,7 +86,7 @@ int main()
     }while(repuesta == 's' || repuesta == 'S');
 
 
-    mostrarAlumnos(nombre, nota1, nota2, nota3, promedio, sexo, TAM);
+    mostrarAlumnos(nombre, nota1, nota2, nota3, promedio, TAM);
 
     return 0;
 }
@@ -90,13 +100,13 @@ float calcularPromedio(int n1, int n2, int n3)
     return promedio;
 }
 
-int cargarAlumnos(char nombreCompleto[][50], int n1[], int n2[], int n3[], float prom[], char sexo[], int tamanio)
+int cargarAlumnos(char nombreCompleto[][50], int n1[], int n2[], int n3[], float prom[], int tamanio)
 {
     int i;
 
     for(i=0 ; i<tamanio ; i++){
 
-        printf("\nIngrese su nombre completo: ");
+        printf("\nIngrese su nombre: ");
         fflush(stdin);
         gets(nombreCompleto[i]);
 
@@ -109,31 +119,75 @@ int cargarAlumnos(char nombreCompleto[][50], int n1[], int n2[], int n3[], float
         printf("\nIngrese nota 3: ");
         scanf("%d", &n3[i]);
 
-        printf("\nIngrese sexo del alumno: ");
-        fflush(stdin);
-        gets(sexo);
-
         prom[i] = calcularPromedio(n1[i], n2[i], n3[i]);
+
 
     }
 
     return 0;
 }
 
-int mostrarAlumnos(char nombreCom[][50], int n1[], int n2[], int n3[], float prom[], char sex[], int tamanio)
+int mostrarAlumnos(char nombreCom[][50], int n1[], int n2[], int n3[], float prom[], int tamanio)
 {
 
      int i;
 
         printf("\n\n");
-        printf(" %20s     %6s    %6s   %6s   %8s  %6c \n", "Nombre", "Nota 1", "Nota 2", "Nota 3", "Promedio");
+        printf(" %20s     %6s    %6s   %6s   %8s  \n", "Nombre", "Nota 1", "Nota 2", "Nota 3", "Promedio");
 
         for(i=0 ; i<tamanio ; i++)
         {
 
-         printf("\n%20s    %6d    %6d    %6d     %.2f  %6c", nombreCom[i], n1[i], n2[i], n3[i], prom[i]);
+         printf("\n%20s    %6d    %6d    %6d     %.2f  ", nombreCom[i], n1[i], n2[i], n3[i], prom[i]);
 
         }
 
         printf("\n\n");
 }
+
+float promedios_Seis(float prom[], int tamanio)
+{
+    int i;
+    int contPromAprobadas=0, contPromDesaprobadas=0;;
+    int acumPromAprobadas=0, acumDesaprobadas=0;
+
+    for(i=0 ; i<tamanio ; i++){
+
+        if(prom >6) {
+
+
+         contPromAprobadas++;
+         acumPromAprobadas += prom;
+
+        }else if(prom < 6) {
+
+         contPromDesaprobadas++;
+         acumDesaprobadas += prom;
+
+        }
+    }
+}
+
+int maxi_min(float prom[], int tamanio)
+{
+
+   int flag =0;
+   int max, min;
+   int i;
+
+   for(i=0 ; i<tamanio ; i++){
+
+        if(flag==0 || prom[i] > max)
+        {
+            max = prom;
+        }
+
+        if(flag==0 || prom[i] < min)
+        {
+            min = prom;
+            flag=1;
+        }
+    }
+
+}
+
