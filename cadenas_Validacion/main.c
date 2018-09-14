@@ -37,7 +37,9 @@ int mostrarAlumnos(char [][50], int [], int[], int[], float[],  int);
 ///INFORMES
 
 float promedios_Seis(float [], int);
-int maxi_min(float prom[], int tamanio);
+float maxi_min(float [], int );
+float busqueda_Promedios(float [], int )
+
 
 int main()
 {
@@ -73,7 +75,8 @@ int main()
                break;
 
         case 3:
-               maxi_min(promedio, TAM);
+
+               system("pause");
                break;
 
         case 4:
@@ -168,7 +171,7 @@ float promedios_Seis(float prom[], int tamanio)
     }
 }
 
-int maxi_min(float prom[], int tamanio)
+float maxi_min(float prom[], int tamanio)
 {
 
    int flag =0;
@@ -190,4 +193,5 @@ int maxi_min(float prom[], int tamanio)
     }
 
 }
+
 
