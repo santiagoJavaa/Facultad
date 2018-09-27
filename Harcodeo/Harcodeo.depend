@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1538058916 source:c:\users\alumno\desktop\harcodeo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
