@@ -219,9 +219,9 @@ int modificarEmpleados(eEmpleado arrayEmpleados[], int tamanio)
     float aux_Salario;
     int aux_Sector;
 
-    do
+
+    if(arrayEmpleados != NULL && tamanio>0)
     {
-        printf("\n\t----MODIFICAR----\n");
 
         getStringNumeros("\nIngrese id a modificar:", auxIdStr);
 
@@ -229,53 +229,64 @@ int modificarEmpleados(eEmpleado arrayEmpleados[], int tamanio)
 
         indice = buscarPorId(arrayEmpleados, TAM_Empeleados, id);
 
-        getStringNumeros("\nQue desea modificar\n\n1. NOMBRE \n2. APELLIDO \n3. SALARIO \n4. SECTOR \n5. SALIR\n Ingrese una opcion: ", auxOpcionStr);
+    }
 
-        opcion = atoi(auxOpcionStr);
+    if(indice > -1)
+    {
 
-        switch(opcion)
+        do
         {
+            printf("\n\t----MODIFICAR----\n");
 
-        case 1:
-            getStringLetras("\nIngrese nombre: ", auxNombreStr);
-            strcpy(arrayEmpleados[indice].nombre, auxNombreStr);
-            break;
+            getStringNumeros("\nQue desea modificar\n\n1. NOMBRE \n2. APELLIDO \n3. SALARIO \n4. SECTOR \n5. SALIR\n Ingrese una opcion: ", auxOpcionStr);
 
-        case 2:
-            getStringLetras("\nIngrese apellido: ", auxApellidoStr);
-            strcpy(arrayEmpleados[indice].apellido, auxApellidoStr);
-            break;
+            opcion = atoi(auxOpcionStr);
 
-        case 3:
-            getStringNumerosFlotantes("\nIngrese salario: ", auxSalarioStr);
-            aux_Salario = atof(auxSalarioStr);
-            arrayEmpleados[indice].salario = aux_Salario;
-            break;
+            switch(opcion)
+            {
 
-        case 4:
-            getStringNumeros("\nIngrese sector: ", auxSectorStr);
-            aux_Sector = atoi(auxSectorStr);
-            arrayEmpleados[indice].sector = aux_Sector;
-            break;
+            case 1:
+                getStringLetras("\nIngrese nombre: ", auxNombreStr);
+                strcpy(arrayEmpleados[indice].nombre, auxNombreStr);
+                break;
 
-        case 5:
-            break;
+            case 2:
+                getStringLetras("\nIngrese apellido: ", auxApellidoStr);
+                strcpy(arrayEmpleados[indice].apellido, auxApellidoStr);
+                break;
+
+            case 3:
+                getStringNumerosFlotantes("\nIngrese salario: ", auxSalarioStr);
+                aux_Salario = atof(auxSalarioStr);
+                arrayEmpleados[indice].salario = aux_Salario;
+                break;
+
+            case 4:
+                getStringNumeros("\nIngrese sector: ", auxSectorStr);
+                aux_Sector = atoi(auxSectorStr);
+                arrayEmpleados[indice].sector = aux_Sector;
+                break;
+
+            case 5:
+                break;
+
+            }
+
+            printf("\n    --------------------------------------------\n");
+            printf("\n\t ID \t NOMBRE \t APELLIDO \t SALARIO \t SECTOR\n");
+            printf("\n    --------------------------------------------\n");
+
+            printf("\n\t %d \t %s \t  %s \t %.2f \t\t %d\n\n\n", arrayEmpleados[indice].id, arrayEmpleados[indice].nombre
+                   , arrayEmpleados[indice].apellido, arrayEmpleados[indice].salario
+                   , arrayEmpleados[indice].sector);
+
+            retorno = 1;
 
         }
-
-        printf("\n    --------------------------------------------\n");
-        printf("\n\t ID \t NOMBRE \t APELLIDO \t SALARIO \t SECTOR\n");
-        printf("\n    --------------------------------------------\n");
-
-        printf("\n\t %d \t %s \t  %s \t %.2f \t\t %d\n\n\n", arrayEmpleados[indice].id, arrayEmpleados[indice].nombre
-               , arrayEmpleados[indice].apellido, arrayEmpleados[indice].salario
-               , arrayEmpleados[indice].sector);
-
-        retorno = 1;
+        while(opcion !=5);
 
     }
 
-    while(opcion !=5);
 
     return retorno;
 
