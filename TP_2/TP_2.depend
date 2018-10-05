@@ -24,3 +24,28 @@
 	"validaciones.h"
 	"ArrayEmployees.h"
 
+1538749956 source:c:\users\alumno\desktop\facultad\tp_2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"ArrayEmployees.h"
+
+1538743092 c:\users\alumno\desktop\facultad\tp_2\validaciones.h
+
+1538743092 c:\users\alumno\desktop\facultad\tp_2\arrayemployees.h
+
+1538743092 source:c:\users\alumno\desktop\facultad\tp_2\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"validaciones.h"
+
+1538751028 source:c:\users\alumno\desktop\facultad\tp_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"ArrayEmployees.h"
+

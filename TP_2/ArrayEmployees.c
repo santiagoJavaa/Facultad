@@ -11,9 +11,11 @@ int inicializarEstado(eEmpleado arrayEmpleados[], int tamanio)
     int i;
     int retorno= 0;
 
-    if(arrayEmpleados != NULL){
+    if(arrayEmpleados != NULL)
+    {
 
-        for(i=0; i<tamanio; i++){
+        for(i=0; i<tamanio; i++)
+        {
 
             arrayEmpleados[i].estado = VACIO; //En 0 se puede agregar empleados
         }
@@ -30,11 +32,13 @@ int autoIncrementalId(eEmpleado arrayEmpleados[], int tamanio)
     static int id=0;
     static int flag=0;
 
-    for(i=0; i<tamanio; i++){
+    for(i=0; i<tamanio; i++)
+    {
 
-        if(arrayEmpleados[i].estado == OCUPADO && arrayEmpleados[i].id >= id && flag ==0){
+        if(arrayEmpleados[i].estado == OCUPADO && arrayEmpleados[i].id >= id && flag ==0)
+        {
 
-                id = arrayEmpleados[i].id;
+            id = arrayEmpleados[i].id;
         }
     }
 
@@ -50,9 +54,11 @@ int buscarLibre(eEmpleado arrayEmpleados[], int tamanio)
     int i;
     int indice= -1;
 
-    for(i=0; i<tamanio; i++){
+    for(i=0; i<tamanio; i++)
+    {
 
-        if(arrayEmpleados[i].estado == VACIO){
+        if(arrayEmpleados[i].estado == VACIO)
+        {
 
             indice = i;
             break;
@@ -60,7 +66,7 @@ int buscarLibre(eEmpleado arrayEmpleados[], int tamanio)
 
     }
 
-   return indice;
+    return indice;
 }
 
 int buscarPorId(eEmpleado arrayEmpleados[], int tamanio, int id)
@@ -69,17 +75,19 @@ int buscarPorId(eEmpleado arrayEmpleados[], int tamanio, int id)
     int i;
     int indice=-1;
 
-    for(i=0; i<tamanio; i++){
+    for(i=0; i<tamanio; i++)
+    {
 
-        if(arrayEmpleados[i].estado == OCUPADO && arrayEmpleados[i].id == id){
+        if(arrayEmpleados[i].estado == OCUPADO && arrayEmpleados[i].id == id)
+        {
 
             indice = i;
             break;
 
         }
 
- }
-   return indice;
+    }
+    return indice;
 }
 
 int AltaEmpleados(eEmpleado arrayEmpleados[])
@@ -95,66 +103,69 @@ int AltaEmpleados(eEmpleado arrayEmpleados[])
     if(indice >= 0)
     {
 
-       auxId = autoIncrementalId(arrayEmpleados, TAM_Empeleados);
+        auxId = autoIncrementalId(arrayEmpleados, TAM_Empeleados);
 
-       getStringLetras("\nIngrese nombre: ", auxNombreStr);
+        getStringLetras("\nIngrese nombre: ", auxNombreStr);
 
-       getStringLetras("\nIngrese apellido: ", auxApellidoStr);
+        getStringLetras("\nIngrese apellido: ", auxApellidoStr);
 
-       getStringNumerosFlotantes("\nIngrese salario: ", auxSalarioStr);
+        getStringNumerosFlotantes("\nIngrese salario: ", auxSalarioStr);
 
-       aux_Salario = atof(auxSalarioStr);
+        aux_Salario = atof(auxSalarioStr);
 
-       getStringNumeros("\nIngrese sector: ", auxSectorStr);
+        getStringNumeros("\nIngrese sector: ", auxSectorStr);
 
-       aux_Sector = atoi(auxSectorStr);
+        aux_Sector = atoi(auxSectorStr);
 
-       printf("\n");
+        printf("\n");
 
-       arrayEmpleados[indice].id = auxId;
-       strcpy(arrayEmpleados[indice].nombre, auxNombreStr);
-       strcpy(arrayEmpleados[indice].apellido, auxApellidoStr);
-       arrayEmpleados[indice].salario = aux_Salario;
-       arrayEmpleados[indice].sector = aux_Sector;
-       arrayEmpleados[indice].estado = 1;
-       retorno = 1;
+        arrayEmpleados[indice].id = auxId;
+        strcpy(arrayEmpleados[indice].nombre, auxNombreStr);
+        strcpy(arrayEmpleados[indice].apellido, auxApellidoStr);
+        arrayEmpleados[indice].salario = aux_Salario;
+        arrayEmpleados[indice].sector = aux_Sector;
+        arrayEmpleados[indice].estado = 1;
+        retorno = 1;
 
-    }else{
+    }
+    else
+    {
 
-      printf("\nNO EXISTE ESPACIO DISPONIBLE\n\n");
+        printf("\nNO EXISTE ESPACIO DISPONIBLE\n\n");
     }
 
-  return retorno;
+    return retorno;
 }
 
 void AltaEmpleados_Harcodeados(eEmpleado arrayEmpleados[])
 {
 
-  int id[6] = {101, 102, 103, 104, 105, 106};
-  char nombre[][50]= {"Juan", "Santiago", "Ferico", "Analia", "Damian", "Alejandro"};
-  char apellido[][50] = {"Martellota", "Fraga", "Liguori", "Ibarra", "Balsis", "Vazquez"};
-  float salario[6]= {12, 11, 14, 10, 9, 20};
-  int sector[6]= {1, 2, 3, 4 , 5, 6};
-  int i;
+    int id[6] = {101, 102, 103, 104, 105, 106};
+    char nombre[][50]= {"Juan", "Santiago", "Ferico", "Analia", "Damian", "Alejandro"};
+    char apellido[][50] = {"Martellota", "Fraga", "Liguori", "Ibarra", "Balsis", "Vazquez"};
+    float salario[6]= {12, 11, 14, 10, 9, 20};
+    int sector[6]= {1, 2, 3, 4, 5, 6};
+    int i;
 
-  for(i=0; i<6; i++){
+    for(i=0; i<6; i++)
+    {
 
-     arrayEmpleados[i].id = id[i];
-     strcpy(arrayEmpleados[i].nombre, nombre[i]);
-     strcpy(arrayEmpleados[i].apellido, apellido[i]);
-     arrayEmpleados[i].salario = salario[i];
-     arrayEmpleados[i].sector = sector[i];
-     arrayEmpleados[i].estado = OCUPADO;
-  }
+        arrayEmpleados[i].id = id[i];
+        strcpy(arrayEmpleados[i].nombre, nombre[i]);
+        strcpy(arrayEmpleados[i].apellido, apellido[i]);
+        arrayEmpleados[i].salario = salario[i];
+        arrayEmpleados[i].sector = sector[i];
+        arrayEmpleados[i].estado = OCUPADO;
+    }
 }
 
 void listarEmpleados(eEmpleado arrayEmpleados[], int tamanio)
 {
     int i;
 
-    printf("\n    ------------------------------------------------------\n");
+    printf("\n    --------------------------------------------\n");
     printf("\n\t ID \t NOMBRE \t APELLIDO \t SALARIO \t SECTOR\n");
-    printf("\n    -----------------------------------------------------\n");
+    printf("\n    --------------------------------------------\n");
 
     for(i=0; i< tamanio; i++)
     {
@@ -162,7 +173,7 @@ void listarEmpleados(eEmpleado arrayEmpleados[], int tamanio)
         if(arrayEmpleados[i].estado == OCUPADO)// En uno me va a mostrar lo que esta en alta, en 0 no pq sino muestra todo el array
         {
 
-           printf("\n\t %d \t %s \t  %s \t %.2f \t\t %d\n\n\n", arrayEmpleados[i].id, arrayEmpleados[i].nombre
+            printf("\n\t %d \t %s \t  %s \t %.2f \t\t %d\n\n\n", arrayEmpleados[i].id, arrayEmpleados[i].nombre
                    , arrayEmpleados[i].apellido, arrayEmpleados[i].salario
                    , arrayEmpleados[i].sector);
 
@@ -173,74 +184,101 @@ void listarEmpleados(eEmpleado arrayEmpleados[], int tamanio)
 int bajaEmpleados(eEmpleado arrayEmpleados[], int tamanio)
 {
 
-  int retorno=0;
-  char auxiliar_Id[20];
-  int id =0;
-  int indice = -1;
+    int retorno=0;
+    char auxiliar_Id[20];
+    int id =0;
+    int indice = -1;
 
-  getStringNumeros("\nIngrese id a dar de baja: ", auxiliar_Id);
+    getStringNumeros("\nIngrese id a dar de baja: ", auxiliar_Id);
 
-  id = atoi(auxiliar_Id);
+    id = atoi(auxiliar_Id);
 
-  indice = buscarPorId(arrayEmpleados, TAM_Empeleados, id);
+    indice = buscarPorId(arrayEmpleados, TAM_Empeleados, id);
 
-  if(indice >= 0){
+    if(indice >= 0)
+    {
 
-       arrayEmpleados[indice].estado = ELIMINADO;
+        arrayEmpleados[indice].estado = ELIMINADO;
 
-       printf("\nEl empleado fue dado de baja\n\n");
-       retorno = 1;
+        printf("\nEl empleado fue dado de baja\n\n");
+        retorno = 1;
 
     }
 
-  return retorno;
+    return retorno;
 }
-/*
+
 int modificarEmpleados(eEmpleado arrayEmpleados[], int tamanio)
 {
     int opcion=0;
     int indice=0;
+    int retorno=0;
 
-    char auxIdStr[50], auxNombreStr[50], auxApellidoStr[50], auxSalarioStr[50], auxSectorStr[50];
+    char auxIdStr[50], auxNombreStr[50], auxApellidoStr[50], auxSalarioStr[50], auxSectorStr[50], auxOpcionStr[50];
     int id=0;
     float aux_Salario;
     int aux_Sector;
 
-    do{
+    do
+    {
+        printf("\n\t----MODIFICAR----\n");
 
-        switch(opcion){
+        getStringNumeros("\nIngrese id a modificar:", auxIdStr);
 
-           getStringNumeros("\nIngrese id a modificar:", auxIdStr);
+        id = atoi(auxIdStr);
 
-           id = atoi(auxIdStr);
+        indice = buscarPorId(arrayEmpleados, TAM_Empeleados, id);
 
-           indice = buscarPorId(arrayEmpleados, TAM_Empeleados, id);
+        getStringNumeros("\nQue desea modificar\n\n1. NOMBRE \n2. APELLIDO \n3. SALARIO \n4. SECTOR \n5. SALIR\n Ingrese una opcion: ", auxOpcionStr);
 
-           opcion = getInt("\nQue desea modificar\n,\n1. NOMBRE \n2. APELLIDO \n3.SALARIO \n4. SECTOR \n Opcion: ");
+        opcion = atoi(auxOpcionStr);
 
-           case 1:
-                  getStringLetras("\nIngrese nombre: ", auxNombreStr);
-                  strcpy(arrayEmpleados[indice].nombre, auxNombreStr);
+        switch(opcion)
+        {
 
-                  break;
+        case 1:
+            getStringLetras("\nIngrese nombre: ", auxNombreStr);
+            strcpy(arrayEmpleados[indice].nombre, auxNombreStr);
+            break;
 
-           case 2:
+        case 2:
+            getStringLetras("\nIngrese apellido: ", auxApellidoStr);
+            strcpy(arrayEmpleados[indice].apellido, auxApellidoStr);
+            break;
 
-                  break;
+        case 3:
+            getStringNumerosFlotantes("\nIngrese salario: ", auxSalarioStr);
+            aux_Salario = atof(auxSalarioStr);
+            arrayEmpleados[indice].salario = aux_Salario;
+            break;
 
+        case 4:
+            getStringNumeros("\nIngrese sector: ", auxSectorStr);
+            aux_Sector = atoi(auxSectorStr);
+            arrayEmpleados[indice].sector = aux_Sector;
+            break;
 
-           case 3:
+        case 5:
+            break;
 
-                 break;
-
-           case 4:
-
-                  break;
         }
 
-    }while(opcion !=4);
+        printf("\n    --------------------------------------------\n");
+        printf("\n\t ID \t NOMBRE \t APELLIDO \t SALARIO \t SECTOR\n");
+        printf("\n    --------------------------------------------\n");
 
-    return indice;
+        printf("\n\t %d \t %s \t  %s \t %.2f \t\t %d\n\n\n", arrayEmpleados[indice].id, arrayEmpleados[indice].nombre
+               , arrayEmpleados[indice].apellido, arrayEmpleados[indice].salario
+               , arrayEmpleados[indice].sector);
+
+        retorno = 1;
+
+    }
+
+    while(opcion !=5);
+
+    return retorno;
+
 }
 
-*/
+

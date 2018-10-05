@@ -9,7 +9,7 @@ int main()
 {
   int indice;
   int opcion=0;
-  char auxiliarOpcion[20];
+  char auxiliarOpcionStr[20];
   int flag=0;
 
   int autoIncrementalId(eEmpleado arrayEmpleados[], int tamanio);
@@ -21,31 +21,29 @@ int main()
       do{
 
          system("cls");
-         printf("\n1. Alta \n2. Listar \n3. Baja \n4. Modificar \5. Informar 6. Salir");
 
-         if(!getStringNumeros("\n\nDigite una opcion del menu: ", auxiliarOpcion))
-         {
-             printf("\nDebe contener un numero\n");
-         }
+         getStringNumeros("\t\n1. Alta \n2. Listar \n3. Baja \n4. Modificar \n5. Informar \n6. Salir \n\n\Ingrese una opcion: ", auxiliarOpcionStr);
 
-         opcion = atoi(auxiliarOpcion);
+         opcion = atoi(auxiliarOpcionStr);
+
+
 
          switch(opcion){
 
             case 1:
-                   indice = AltaEmpleados(arrayEmpleado);
-                   //AltaEmpleados_Harcodeados(arrayEmpleado);
+                   //indice = AltaEmpleados(arrayEmpleado);
+                   AltaEmpleados_Harcodeados(arrayEmpleado);
 
                    if(indice){
 
-                    printf("\nAlta con exito!!\n");
+                    printf("\nEMPLEADO CARGADO EN EL SISTEMA!!\n\n");
                    }
 
                    system("pause");
                    break;
 
             case 2:
-                   //MIRAR ACA
+                   /*//MIRAR ACA
                    if(flag == 1)
                    {
                        if(listarEmpleados(arrayEmpleado, TAM_Empeleados))
@@ -62,7 +60,9 @@ int main()
 
                      printf("\nNo puede informar sobre los empleados si no se han ingresado\n");
 
-                   }
+                   }*/
+
+                   listarEmpleados(arrayEmpleado, TAM_Empeleados);
 
                    system("pause");
                    break;
@@ -85,7 +85,6 @@ int main()
             default :
                     printf("\nEsta opcion no existe\n");
                     break;
-
          }
 
       }while(opcion !=5);
