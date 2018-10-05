@@ -163,9 +163,7 @@ void listarEmpleados(eEmpleado arrayEmpleados[], int tamanio)
 {
     int i;
 
-    printf("\n    --------------------------------------------\n");
-    printf("\n\t ID \t NOMBRE \t APELLIDO \t SALARIO \t SECTOR\n");
-    printf("\n    --------------------------------------------\n");
+    printf("\n| ID |  NOMBRE  |  APELLIDO  |  SALARIO  |  SECTOR |\n");
 
     for(i=0; i< tamanio; i++)
     {
@@ -173,7 +171,7 @@ void listarEmpleados(eEmpleado arrayEmpleados[], int tamanio)
         if(arrayEmpleados[i].estado == OCUPADO)// En uno me va a mostrar lo que esta en alta, en 0 no pq sino muestra todo el array
         {
 
-            printf("\n\t %d \t %s \t  %s \t %.2f \t\t %d\n\n\n", arrayEmpleados[i].id, arrayEmpleados[i].nombre
+            printf("\n%4d  %10s  %10s %10.2f  %4d\n\n\n", arrayEmpleados[i].id, arrayEmpleados[i].nombre
                    , arrayEmpleados[i].apellido, arrayEmpleados[i].salario
                    , arrayEmpleados[i].sector);
 
@@ -238,7 +236,7 @@ int modificarEmpleados(eEmpleado arrayEmpleados[], int tamanio)
         {
             printf("\n\t----MODIFICAR----\n");
 
-            getStringNumeros("\nQue desea modificar\n\n1. NOMBRE \n2. APELLIDO \n3. SALARIO \n4. SECTOR \n5. SALIR\n Ingrese una opcion: ", auxOpcionStr);
+            getStringNumeros("\nQue desea modificar\n\n1. NOMBRE \n2. APELLIDO \n3. SALARIO \n4. SECTOR \n5. SALIR \n\nIngrese una opcion: ", auxOpcionStr);
 
             opcion = atoi(auxOpcionStr);
 
@@ -272,11 +270,9 @@ int modificarEmpleados(eEmpleado arrayEmpleados[], int tamanio)
 
             }
 
-            printf("\n    --------------------------------------------\n");
-            printf("\n\t ID \t NOMBRE \t APELLIDO \t SALARIO \t SECTOR\n");
-            printf("\n    --------------------------------------------\n");
+            printf("\n| ID |  NOMBRE  |  APELLIDO  |  SALARIO  |  SECTOR |\n");
 
-            printf("\n\t %d \t %s \t  %s \t %.2f \t\t %d\n\n\n", arrayEmpleados[indice].id, arrayEmpleados[indice].nombre
+             printf("\n%4d  %10s  %10s %10.2f  %4d\n\n\n", arrayEmpleados[indice].id, arrayEmpleados[indice].nombre
                    , arrayEmpleados[indice].apellido, arrayEmpleados[indice].salario
                    , arrayEmpleados[indice].sector);
 
