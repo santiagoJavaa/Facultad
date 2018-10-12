@@ -5,8 +5,6 @@
 #include "propietario.h"
 #include "automovil.h"
 
-/**------------------FUNCIONES DE INVOCACION------------------*/
-
 void getString(char mensaje[], char input[])
 {
     printf(mensaje);
@@ -81,7 +79,6 @@ int getStringNumerosFloat(char mensaje[],char input[])
     return 0;
 }
 
-/**------------------FUNCIONES DE VALIDACION------------------*/
 
 int esNumerico(char str[])
 {
@@ -151,12 +148,12 @@ int esSoloLetrasConSigno(char str[])
     while(str[i] != '\0' && str[i] == '-')
     {
         if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'));
-            return 0;
+        return 0;
         i++;
     }
     return 1;
 }
 
-/**-------------------------------------------------------------------------------------*/
+
 
 

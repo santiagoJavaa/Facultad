@@ -1,10 +1,12 @@
 
 typedef struct{
+
     int id_auto;
     char patente[21];
     char marca[41];
     int id_propietario;
     int estado;
+
 }eAuto;
 
 /**
@@ -72,7 +74,19 @@ int alta_automovil(eAuto automovil[], int tamAuto, ePropietario propietario[], i
 
 void autoMostrar(eAuto automoviles);
 
+/** \brief
+ * \param  eAuto RECIBE EL VECTOR DE LA ESTRUCTURA AUTOS.
+ * \param
+ * \return
+ */
 void lista_autos(eAuto automoviles[], int tamAuto);
 
+/**
+ *  MUESTRA LA TABLA DEL LISTADO DE LAS CUATROS MARCAS
+ */
 
 void Listado_De_marcas();
+
+
+
+

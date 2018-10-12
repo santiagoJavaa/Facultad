@@ -6,6 +6,7 @@ typedef struct{
     char direccion[21];
     char num_tarjeta_credito[31];
     int estado;
+
 }ePropietario;
 
 /**
@@ -61,6 +62,7 @@ int eProp_buscarPorId(ePropietario propietario[], int tamProp, int id);
  *@param tamProp RECIBE LA CANTIDAD DE POSICIONES QUE TENDRA EL VECTOR DE PROPIETARIO.
  *@return 0 SI EL PROPIETARIO ES DADO DE ALTA. SINO RETORNARA UN NUMERO NEGATIVO SEGUN EL ERROR QUE HAYA TENIDO.
  */
+
 int alta_propietario(ePropietario propietario[], int tamProp);
 
 /**

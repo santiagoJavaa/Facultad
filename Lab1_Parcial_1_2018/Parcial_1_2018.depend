@@ -539,3 +539,61 @@
 	<stdlib.h>
 	"funcionValidar.h"
 
+1539351419 source:c:\users\alumno\desktop\facultad\lab1_parcial_1_2018\automovil.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"propietario.h"
+	"automovil.h"
+	"funcionValidar.h"
+
+1539350370 c:\users\alumno\desktop\facultad\lab1_parcial_1_2018\propietario.h
+
+1539357321 c:\users\alumno\desktop\facultad\lab1_parcial_1_2018\automovil.h
+
+1539345580 c:\users\alumno\desktop\facultad\lab1_parcial_1_2018\funcionvalidar.h
+
+1539357555 source:c:\users\alumno\desktop\facultad\lab1_parcial_1_2018\estacionamiento.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"propietario.h"
+	"automovil.h"
+	"estacionamiento.h"
+	"funcionValidar.h"
+	"menu.h"
+
+1539345580 c:\users\alumno\desktop\facultad\lab1_parcial_1_2018\estacionamiento.h
+
+1539345580 c:\users\alumno\desktop\facultad\lab1_parcial_1_2018\menu.h
+
+1539350370 source:c:\users\alumno\desktop\facultad\lab1_parcial_1_2018\funcionvalidar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionValidar.h"
+	"propietario.h"
+	"automovil.h"
+
+1539357321 source:c:\users\alumno\desktop\facultad\lab1_parcial_1_2018\main.c
+	<stdio.h>
+	<stdlib.h>
+	"propietario.h"
+	"automovil.h"
+	"funcionValidar.h"
+	"estacionamiento.h"
+	"menu.h"
+
+1539357321 source:c:\users\alumno\desktop\facultad\lab1_parcial_1_2018\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionValidar.h"
+
+1539350370 source:c:\users\alumno\desktop\facultad\lab1_parcial_1_2018\propietario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"propietario.h"
+	"funcionValidar.h"
+

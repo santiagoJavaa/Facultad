@@ -6,8 +6,8 @@
 #include "estacionamiento.h"
 #include "menu.h"
 
-#define CANT_PROPIETARIO 20
-#define CANT_AUTOMOVIL 30
+#define CANT_PROPIETARIO 50
+#define CANT_AUTOMOVIL 50
 
 int main()
 {
@@ -97,6 +97,7 @@ int main()
                 printf("\nERROR! SU RESPUESTA NO ES VALIDA\n");
             }
             break;
+
         case 3:
             lista_propietario(propietario, CANT_PROPIETARIO);
             index = baja_propietario(propietario,CANT_PROPIETARIO,automoviles,CANT_AUTOMOVIL);
@@ -134,74 +135,104 @@ int main()
             lista_propietario(propietario,CANT_PROPIETARIO);
             index = alta_automovil(automoviles,CANT_AUTOMOVIL,propietario,CANT_PROPIETARIO);
 
-            if(index == 0){
+            if(index == 0)
+            {
                 printf("\n\tAUTOMOVIL DADO DE ALTA!\n");
-            }else if(index == -2){
+            }
+            else if(index == -2)
+            {
                 printf("\nERROR! EL ID INGRESADO NO ES VALIDO!\n");
-            }else if(index == -3){
+            }
+            else if(index == -3)
+            {
                 printf("\nERROR! EL PROPIETARIO NO ESTA REGISTRADO!\n");
-            }else if(index == -4){
+            }
+            else if(index == -4)
+            {
                 printf("\nERROR! NO HAY ESPACIO EN EL VECTOR DE AUTOS!\n");
-            }else if(index == -5){
+            }
+            else if(index == -5)
+            {
                 printf("\nERROR! NO SE PUEDEN ESTACIONAR MAS AUTOS!\n");
-            }else if(index == -6){
+            }
+            else if(index == -6)
+            {
                 printf("\nERROR! LA PATENTE NO ES VALIDA!\n");
-            }else if(index == -7){
+            }
+            else if(index == -7)
+            {
                 printf("\nERROR! LA MARCA NO ES VALIDA!\n");
-            }else if(index == -8){
+            }
+            else if(index == -8)
+            {
                 printf("\n\tERROR! LA MARCA INGRESADA NO ESTA ENTRE [1 - 4]\n");
             }
             break;
 
         case 6:
 
-            lista_propietario(propietario,CANT_PROPIETARIO);
+            lista_autos(automoviles, CANT_AUTOMOVIL);
             index = baja_auto(automoviles,CANT_AUTOMOVIL,propietario,CANT_PROPIETARIO);
-            if(index == -2){
+            if(index == -2)
+            {
                 printf("\nERROR! EL ID INGRESADO NO ES VALIDO\n");
-            }else if(index == -3){
+            }
+            else if(index == -3)
+            {
                 printf("\nERROR! LA RESPUESTA NO ES VALIDA\n");
-            }else if(index == -4){
+            }
+            else if(index == -4)
+            {
                 printf("\nUSTED CANCELO EL AGRESO DEL AUTO\n");
             }
             break;
 
         case 7:
-               lista_propietario(propietario,CANT_PROPIETARIO);//PARA QUE EL USUARIO SEPA DE QUE ID ES
-               printf("\n\n------------------------------------------------------------------------------------------\n\n");
-               lista_autos(automoviles, CANT_AUTOMOVIL);
-               break;
+            lista_propietario(propietario,CANT_PROPIETARIO);//PARA QUE EL USUARIO SEPA DE QUE ID ES
+            printf("\n\n------------------------------------------------------------------------------------------\n\n");
+            lista_autos(automoviles, CANT_AUTOMOVIL);
+            break;
 
         case 8:
-            seguir = 'n';
-            break;
-       /* case 6:
             index = recaudacion_Total();
-            printf("\n\tLA RECAUDACION TOTAL ES: %d\n",index);
+            printf("\n\nLA RECAUDACION TOTAL ES: %d\n\n",index);
+            system("pause");
             break;
-        case 7:
+
+        case 9:
             recaudacion_por_marca();
             break;
-        case 8:
+
+        case 10:
+            lista_propietario(propietario,CANT_PROPIETARIO);
             index = listado_Propietario_ConAutos(propietario,CANT_PROPIETARIO,automoviles,CANT_AUTOMOVIL);
             if(index == -2){
                 printf("\n\tERROR! INGRESO MAL EL ID\n");
             }else if(index == -3){
                 printf("\n\tERROR! NO ESTA REGISTRADO EL PROPIETARIO!\n");
             }else if(index == -4){
-                printf("\n\tERROR! EL PROPIETARIO NO TIENE AUTOS\n");
+                //printf("\n\tERROR! EL PROPIETARIO NO TIENE AUTOS\n");
             }
             break;
-        case 9:
+
+        case 11:
+
             listado_Audi(automoviles,CANT_AUTOMOVIL,propietario,CANT_PROPIETARIO);
             break;
-        case 10:
-            listado_por_patente(automoviles,CANT_AUTOMOVIL,propietario);
-            break;*/
 
+        case 12:
+            listado_por_patente(automoviles,CANT_AUTOMOVIL,propietario);
+            break;
+
+        case 13:
+
+            seguir = 'n';
+            break;
 
         default:
-            printf("\n\tERROR! INGRESE UNA OPCION ENTRE [1/5]\n");
+
+            printf("\n\nERROR! INGRESE UNA OPCION ENTRE [1/12]\n\n");
+
         }
     }
     return 0;

@@ -11,6 +11,7 @@
 #define OTROS 4
 
 void inicializar_auto(eAuto automovil[], int tamAuto){
+
     int i;
 
     for(i=0;i<tamAuto;i++){
@@ -20,6 +21,7 @@ void inicializar_auto(eAuto automovil[], int tamAuto){
 }
 
 void datos_hard_autos(eAuto automoviles[], int tamAuto){
+
     int i;
 
     int id[]= {1,2,3,4,5,6,7,8,9,10};
@@ -66,23 +68,6 @@ void lista_autos(eAuto automoviles[], int tamAuto)
     }
 }
 
-
-
-
-/*
-void lista_autos(eAuto automoviles[], int tamAuto)
-{
-
-    printf("\n ID  \tPATENTE \tMARCA    \tID [PROPIETARIO]\n");
-    int i;
-    for(i=0;i<tamAuto;i++){
-
-        if(automoviles[i].estado == 1){
-            printf("\n%3d     %5s      %5s     %5d \n",automoviles[i].id_auto,automoviles[i].patente,automoviles[i].marca,automoviles[i].id_propietario);
-        }
-    }
-}
-*/
 
 int eAuto_buscarLugarLibre(eAuto automovil[], int tamAuto){
     int retorno = -1;

@@ -16,7 +16,7 @@ void inicializar_propietario(ePropietario propietario[], int tamProp){
 void datos_hard_propietario(ePropietario propietario[], int tamProp){
 
     int id_pro[]= {1,2,3,4},i;
-    char nombree[][20]= {"Juan","Luis","Maria","Jose"};
+    char nombre[][20]= {"Juan","Luis","Maria","Jose"};
     char apellido[][20]= {"Gaeta","Sanchez","Gomez","Lopez"};
     char tarjeta[][40]= {"111-111","222-222","333-333","444-444"};
     char direccion[][40]= {"mitre","urquiza","belgrano","alsina"};
@@ -25,7 +25,7 @@ void datos_hard_propietario(ePropietario propietario[], int tamProp){
 
     for(i=0;i<4;i++){
         propietario[i].id_propietario = id_pro[i];
-        strcpy(propietario[i].nombre,nombree[i]);
+        strcpy(propietario[i].nombre,nombre[i]);
         strcpy(propietario[i].apellido,apellido[i]);
         strcpy(propietario[i].num_tarjeta_credito,tarjeta[i]);
         strcpy(propietario[i].direccion,direccion[i]);
@@ -41,7 +41,7 @@ void lista_propietario(ePropietario propietario[], int tamProp){
 
     for(i=0;i<tamProp;i++){
         if(propietario[i].estado == 1){
-            printf("\n%3d   %15s   %15s   %15s   %15s\n",propietario[i].id_propietario,propietario[i].nombre,propietario[i].apellido,propietario[i].direccion,propietario[i].num_tarjeta_credito);
+            printf("\n%3d   %15s   %15s   %15s    %15s\n",propietario[i].id_propietario,propietario[i].nombre,propietario[i].apellido,propietario[i].direccion,propietario[i].num_tarjeta_credito);
         }
     }
 }
@@ -63,6 +63,7 @@ int eProp_buscarLugarLibre(ePropietario propietario[], int tamProp){
 }
 
 int eProp_siguienteId(ePropietario propietario[], int tamProp){
+
     int retorno = 0;
     int i;
     if(tamProp > 0 && propietario != NULL){
@@ -101,7 +102,7 @@ int alta_propietario(ePropietario propietario[], int tamProp){
     int retorno = -1, id_pro, index;
     char aux_nom[21], aux_apellido[21], aux_direccion[21], aux_numTarjeta[21];
 
-    printf("\nPROPIETARIO\n");
+    printf("\nINGRESE SUS DATOS POR FAVOR\n");
     if(tamProp > 0 && propietario != NULL){
 
         retorno = -2;
@@ -140,6 +141,7 @@ int alta_propietario(ePropietario propietario[], int tamProp){
                     strcpy(propietario[index].direccion,aux_direccion);
                     strcpy(propietario[index].num_tarjeta_credito,aux_numTarjeta);
                     propietario[index].estado = 1;
+
                 }
             }
         }
