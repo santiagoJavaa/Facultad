@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1540480180 source:c:\users\alumno\desktop\punteros\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Persona.h"
+
+1540479479 c:\users\alumno\desktop\punteros\persona.h
+
+1540480347 source:c:\users\alumno\desktop\punteros\persona.c
+	"Persona.h"
+	<stdio.h>
+	"string.h"
+
